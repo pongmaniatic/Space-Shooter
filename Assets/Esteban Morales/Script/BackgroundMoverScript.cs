@@ -19,7 +19,6 @@ public class BackgroundMoverScript : MonoBehaviour
     void Update()
     {
         spwanTime -= Time.deltaTime;
-        Debug.Log(spwanTime);
         if (spwanTime <= 0.0f)
         {
             randomFloor = Random.Range(1, 4);

@@ -10,10 +10,8 @@ public class BuildingMovement : MonoBehaviour
     {
         transform.position += Vector3.right * Time.deltaTime * 5;
         Lifespan -= Time.deltaTime;
-        Debug.Log(Lifespan);
         if (Lifespan <= 0.0f)
         {
-            Debug.Log("destroy");
             timerEnded();
         }
 
