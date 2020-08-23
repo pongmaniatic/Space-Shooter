@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\Gento_PC\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Gento_PC\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_Space-Shooter.1897628332.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Gento_PC\OneDrive\Desktop\Space-Shooter" t="IncludeRecursive">
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="_Art Folder" t="Include">
+          <e p="VisualEffects" t="Include">
+            <e p="Projectiles" t="Include">
+              <e p="Shaders" t="Include">
+                <e p="Additive_EdgeSoft.shader" t="Include" />
+                <e p="Additive_Scroll01.shader" t="Include" />
+                <e p="AdditiveMobile_Scroll01.shader" t="Include" />
+                <e p="AlphaBlended_EdgeSoft.shader" t="Include" />
+                <e p="AlphaBlended_Scroll01.shader" t="Include" />
+                <e p="AlphaBlendedMobile_Scroll01.shader" t="Include" />
+              </e>
+            </e>
+          </e>
+        </e>
+        <e p="_SystemSettings" t="Include">
+          <e p="InputMaster.cs" t="Include" />
+        </e>
+        <e p="Add on" t="Include">
+          <e p="AurynSky" t="Include">
+            <e p="Gems Ultimate Pack" t="Include">
+              <e p="READ ME.txt" t="Include" />
+            </e>
+            <e p="Rockets Missiles and Bombs" t="Include">
+              <e p="READ ME.txt" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Esteban Morales" t="Include">
+          <e p="Script" t="Include">
+            <e p="AnimationScript.cs" t="Include" />
+            <e p="AssignmentOne.cs" t="Include" />
+            <e p="BackgroundMoverScript.cs" t="Include" />
+            <e p="BuildingMovement.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Scripts" t="Include">
+          <e p="Player Scripts" t="Include">
+            <e p="PlayerInfo.cs" t="Include" />
+            <e p="PlayerMovement.cs" t="Include" />
+          </e>
+          <e p="Weapon Scripts" t="Include">
+            <e p="KillBullet.cs" t="Include" />
+            <e p="WeaponPR.cs" t="Include" />
+            <e p="Weapons.cs" t="Include" />
+          </e>
+        </e>
+      </e>
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="Packages" t="ExcludeRecursive" />
+      <e p="Space-Shooter.sln" t="IncludeFlat" />
+      <e p="Temp\bin" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>
