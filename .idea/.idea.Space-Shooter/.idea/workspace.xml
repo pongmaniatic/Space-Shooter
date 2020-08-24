@@ -18,15 +18,16 @@
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/Visual Effects/vfx.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Visual Effects/ProjectileMoveScript.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player Scripts/PlayerInfo.cs" />
         <option value="$PROJECT_DIR$/Assets/AutoSpawnWeapons.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player Scripts/Weapons.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Weapon Scripts/AutoSpawnWeapons.cs" />
         <option value="$PROJECT_DIR$/Assets/KillBullet.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Weapon Scripts/Weapons.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy Scripts/EnemyKillBullet.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player Scripts/PlayerInfo.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player Scripts/PlayerMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Weapon Scripts/KillBullet.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Weapon Scripts/WeaponPR.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Weapon Scripts/Weapons.cs" />
       </list>
     </option>
   </component>
@@ -85,6 +86,7 @@
       <workItem from="1598177666352" duration="3977000" />
       <workItem from="1598181813659" duration="111000" />
       <workItem from="1598182927716" duration="874000" />
+      <workItem from="1598257332119" duration="962000" />
     </task>
     <servers />
   </component>
