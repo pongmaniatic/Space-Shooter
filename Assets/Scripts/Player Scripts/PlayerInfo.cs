@@ -1,64 +1,59 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.InputSystem;
+﻿using UnityEngine;
+using Weapon_Scripts;
 
-public class PlayerInfo : MonoBehaviour
+namespace Player_Scripts
 {
-    private InputMaster _inputActions;
-    public int playerHealth = 5;
-
-
-    public float targetTime = 0.3f;
-
-
-    // Update is called once per frame
-    private void Awake()
+    public class PlayerInfo : MonoBehaviour
     {
-        _inputActions = new InputMaster();
-    }
-    
-    private void OnEnable()
-    {
-        _inputActions.Enable();
-    }
-
-    private void Start()
-    {
-       // _inputActions.Player.Shoot.performed += _ => PlayerShoot();
-       // _inputActions.Player.Shoot.Enable();
-    }
-
-    private void PlayerShoot()
-    {
-        GameObject currentWeapon = GameObject.FindWithTag("PlayerWeapon");
-        WeaponPR availableWeapon = currentWeapon.GetComponent<WeaponPR>();
-        availableWeapon.PlayerShoot();
-    }
+        private InputMaster _inputActions;
+        public int playerHealth = 5;
+        public float targetTime = 0.3f;
 
 
-    private void OnDisable()
-    {
-        _inputActions.Disable();
-    }
-
-    void Update()
-    {
-        targetTime -= Time.deltaTime;
-
-        if (targetTime <= 0.0f)
+        // Update is called once per frame
+        private void Awake()
         {
-            timerEnded();
+            _inputActions = new InputMaster();
+        }
+    
+        private void OnEnable()
+        {
+            _inputActions.Enable();
+        }
+
+        private void PlayerShoot()
+        {
+            GameObject currentWeapon = GameObject.FindWithTag("PlayerWeapon");
+            WeaponPR availableWScript = currentWeapon.GetComponent<WeaponPR>();
+            availableWScript.PlayerShoot();
+        }
+
+
+        private void OnDisable()
+        {
+            _inputActions.Disable();
         }
 
         
-    }
+        private void TimerEnded()
+        {
+            PlayerShoot();
+            targetTime = 0.3f;
+        }
+        
+        void Update()
+        {
+            targetTime -= Time.deltaTime;
 
-    void timerEnded()
-    {
-        PlayerShoot();
-        targetTime = 0.3f;
-    }
+            if (targetTime <= 0.0f)
+            {
+                TimerEnded();
+            }
 
+        
+        }
+
+
+
+    }
 }

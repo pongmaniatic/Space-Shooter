@@ -1,95 +1,82 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Weapons : MonoBehaviour
+namespace Weapon_Scripts
 {
-    //private GameObject weapon;
-    private GameObject weapons;
-    private GameObject rightHand;
-    public int equippedWeapon = 0;
-    private String[] weaponsChoice = {"SRifle","Shotgun","LaserGun","Elite","FusionRanger"};
-    private void Awake()
+    public class Weapons : MonoBehaviour
     {
-     rightHand = GameObject.Find("RightHand"); 
-     weapons  = GameObject.Find("Weapons");
-     DisableActiveWeapn();
-     ChangeWeapon(weaponsChoice[equippedWeapon]);
-     
-     
-    }
-
-    public void UpgradeRifle()
-    {
-        if (equippedWeapon < weaponsChoice.Length-1)
+        //private GameObject weapon;
+        private GameObject _weapons;
+        private GameObject _rightHand;
+        public int equippedWeapon = 0;
+        private readonly String[] _weaponsChoice = {"SRifle","Shotgun","LaserGun","Elite","FusionRanger"};
+        private void Awake()
         {
-            equippedWeapon++;
+            _rightHand = GameObject.Find("RightHand"); 
+            _weapons  = GameObject.Find("Weapons");
+            DisableActiveWeaponry();
+            ChangeWeapon(_weaponsChoice[equippedWeapon]);
         }
-        ChangeWeapon(weaponsChoice[equippedWeapon]);
 
-    }
+        public void UpgradeRifle()
+        {
+            if (equippedWeapon < _weaponsChoice.Length-1)
+            {
+                equippedWeapon++;
+            }
+            ChangeWeapon(_weaponsChoice[equippedWeapon]);
+
+        }
     
-    private void EnableChosenWeapn(string chosenWeapon)
-    {
-        Transform[] allchildren = weapons.transform.GetComponentsInChildren<Transform>(true);
-        foreach (Transform gObject in allchildren)
+        private void EnableChosenWeaponry(string chosenWeapon)
         {
-            if (gObject.name == chosenWeapon)
+            Transform[] children = _weapons.transform.GetComponentsInChildren<Transform>(true);
+            foreach (Transform gObject in children)
             {
-                gObject.gameObject.SetActive(true); 
-               
-                
-                //every Weapon has to be positioned and rotated specificly  , pos and rotation are added
-                // on every weapon 
-                WeaponPR weaponScript = gObject.GetComponent<WeaponPR>(); 
-                Transform weaponTransform = gObject.transform;
-                weaponTransform.parent = rightHand.transform;
-                weaponTransform.localPosition = weaponScript.position;
-                weaponTransform.localRotation = Quaternion.Euler(weaponScript.rotation);
+                if (gObject.name == chosenWeapon)
+                {
+                    gObject.gameObject.SetActive(true); 
+                    
+                    WeaponPR weaponScript = gObject.GetComponent<WeaponPR>(); 
+                    Transform weaponTransform = gObject.transform;
+                    weaponTransform.parent = _rightHand.transform;
+                    weaponTransform.localPosition = weaponScript.position;
+                    weaponTransform.localRotation = Quaternion.Euler(weaponScript.rotation);
+                }
+            }
+        
+        }
+
+        private void LoopThroughToDisable(Transform[] weaponsContainer)
+        {
+            foreach (Transform gObject in weaponsContainer)
+            {
+                if (gObject.CompareTag("PlayerWeapon"))
+                {
+                    gObject.gameObject.SetActive(false);
+                    gObject.transform.parent = _weapons.transform;
+                }
             }
         }
-        
-    }
 
- 
-
-    private void DisableActiveWeapn()
-    {
-        Transform[] weaponsInHand = rightHand.transform.GetComponentsInChildren<Transform>(true);
-        Transform[] weaponsInWeapons = weapons.transform.GetComponentsInChildren<Transform>(true);
-
-        
-        foreach (Transform gObject in weaponsInHand)
+        private void DisableActiveWeaponry()
         {
-            if (gObject.CompareTag("PlayerWeapon"))
-            {
-                gObject.gameObject.SetActive(false);
-                gObject.transform.parent = weapons.transform;
-            }
+            Transform[] weaponsInHand = _rightHand.transform.GetComponentsInChildren<Transform>(true);
+            Transform[] weaponsInWeapons = _weapons.transform.GetComponentsInChildren<Transform>(true);
+            LoopThroughToDisable(weaponsInHand);
+            LoopThroughToDisable(weaponsInWeapons);
         }
-        
-        
-        
-        foreach (Transform gObject in weaponsInWeapons)
+
+
+        public void ChangeWeapon(string weaponName)
         {
-            if (gObject.CompareTag("PlayerWeapon"))
-            {
-                gObject.gameObject.SetActive(false);
-                gObject.transform.parent = weapons.transform;
-            }
+            DisableActiveWeaponry();
+            EnableChosenWeaponry(weaponName);
         }
-    }
-
-
-    public void ChangeWeapon(string weaponName)
-    {
-    DisableActiveWeapn();
-    EnableChosenWeapn(weaponName);
-    }
 
 
   
+    }
 }
     
 

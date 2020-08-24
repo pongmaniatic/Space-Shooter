@@ -1,70 +1,68 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class KillBullet : MonoBehaviour
+namespace Weapon_Scripts
 {
-
-    private GameObject playerRef;
-    public float timeToDestroy = 0.5f;
-    public int weaponDamage = 1;
-
-    
-    void Awake()
+    public class KillBullet : MonoBehaviour
     {
-        playerRef = GameObject.FindWithTag("Player");
-        Invoke(nameof(Kill),timeToDestroy); 
-    }
 
-    void Kill()
-    {
-        Destroy(gameObject);
-    }
+        private GameObject _player;
+        public float timeToDestroy = 0.5f;
+        public int weaponDamage = 1;
 
-    private void OnBecameInvisible()
-    {
-        Destroy(gameObject);
-    }
 
-    private void OnCollisionEnter(Collision other)
-    {
-        if (other.gameObject.name == "AmmoBox")
+        private void Awake()
         {
-            Weapons wScript = playerRef.GetComponent<Weapons>();
-            wScript.UpgradeRifle();
-            Destroy(other.gameObject); 
-
+            _player = GameObject.FindWithTag("Player");
+            Invoke(nameof(Kill),timeToDestroy); 
         }
-        // weaponDamage is different for each bullet prefab 
-        // if (other.gameObject.name == "enemy") .. or use tag for all your enemies created 
-        // Other will be the enemy that we hit  . do enemy.health - weapon damage and if its below 0 than destroy else
-        // just retract - damage . 
-        if (other.gameObject.tag == "EnemyWaveOne" || other.gameObject.tag == "EnemyWaveTwo")
-        {
-            EnemyBehaviour EnemyScript = other.gameObject.GetComponent<EnemyBehaviour>();
-            EnemyScript.health -= weaponDamage;
-            if (EnemyScript.health <= 0)
-            {
-                Destroy(other.gameObject);
-            }
-        }
-        if (other.gameObject.tag == "Boss")
-        {
-            EnemyBehaviour EnemyScript = other.gameObject.GetComponent<EnemyBehaviour>();
-            EnemyScript.health -= weaponDamage;
-            if (EnemyScript.health <= 0)
-            {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-            }
 
+        private void Kill()
+        {
             Destroy(gameObject);
         }
 
+        private void OnBecameInvisible()
+        {
+            Destroy(gameObject);
+        }
 
+        private void OnCollisionEnter(Collision other)
+        {
+            if (other.gameObject.name == "AmmoBox")
+            {
+                Weapons weaponScript = _player.GetComponent<Weapons>();
+                weaponScript.UpgradeRifle();
+                Destroy(other.gameObject); 
 
-        // here you change to destroy thing or to make their health lower If object with tag name lets say enemy .. 
-        Destroy(gameObject);
+            }
+            
+            EnemyBehaviour enemyScript ;
+            
+            if (other.gameObject.CompareTag("EnemyWaveOne") || other.gameObject.CompareTag("EnemyWaveTwo"))
+            {
+                enemyScript = other.gameObject.GetComponent<EnemyBehaviour>();
+                enemyScript.health -= weaponDamage;
+                if (enemyScript.health <= 0)
+                {
+                    Destroy(other.gameObject);
+                }
+            }
+            if (other.gameObject.CompareTag("Boss"))
+            {
+                enemyScript = other.gameObject.GetComponent<EnemyBehaviour>();
+                enemyScript.health -= weaponDamage;
+                if (enemyScript.health <= 0)
+                {
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                }
+
+                Destroy(gameObject);
+            }
+
+            
+            // here you change to destroy thing or to make their health lower If object with tag name lets say enemy .. 
+            Destroy(gameObject);
+        }
     }
 }
