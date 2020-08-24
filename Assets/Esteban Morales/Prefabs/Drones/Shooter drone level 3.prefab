@@ -172,9 +172,11 @@ GameObject:
   m_Component:
   - component: {fileID: 7015333142986767880}
   - component: {fileID: 7028136663241778972}
+  - component: {fileID: -1945578304387409730}
+  - component: {fileID: 5576780669836764937}
   m_Layer: 0
   m_Name: Shooter drone level 3
-  m_TagString: Player
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -214,6 +216,37 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &-1945578304387409730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7011505184964193512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d949b0b075734424e951241e32417099, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 0
+  EnemyType: 2
+  position: {x: 0, y: 0, z: 0}
+  rotation: {x: 0, y: 0, z: 0}
+  sBullet: {fileID: 1374267004960804, guid: 10a196906512b5141bfd56285ee6c562, type: 3}
+  targetTime: 0.3
+--- !u!135 &5576780669836764937
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7011505184964193512}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7011551554527057936
 GameObject:
   m_ObjectHideFlags: 0

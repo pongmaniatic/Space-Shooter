@@ -9,19 +9,10 @@ public class WeaponPR : MonoBehaviour
    public Vector3 rotation = new Vector3();
    public GameObject sBullet;
 
-   private void Awake()
-   {
-
-
-   }
 
    public void PlayerShoot()
    {
-      
-
       GameObject bullet = transform.GetChild(1).gameObject;
-      
-      
          if (bullet != null)
          {
             Vector3 position = bullet.transform.position;
@@ -35,7 +26,5 @@ public class WeaponPR : MonoBehaviour
             newBullet.transform.parent = null;
             newBullet.GetComponent<Rigidbody>().AddForce(bullet.transform.forward * 15, ForceMode.VelocityChange);
          }
-      
    }
-   
 }

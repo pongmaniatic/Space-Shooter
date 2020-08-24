@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BuildingMovement : MonoBehaviour
 {
-    public float Lifespan = 10.0f;
+    public float Lifespan = 15.0f;
  
     void Update()
     {

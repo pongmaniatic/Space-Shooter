@@ -1469,9 +1469,10 @@ GameObject:
   - component: {fileID: 4000013482044542}
   - component: {fileID: 95000011553861148}
   - component: {fileID: -5260997270877943045}
+  - component: {fileID: -2339098117529548280}
   m_Layer: 0
   m_Name: Exroid 5002
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1539,8 +1540,26 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 3.41
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 2.26
+  m_Center: {x: 0, y: 1.05, z: 0}
+--- !u!114 &-2339098117529548280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000013494599658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d949b0b075734424e951241e32417099, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 0
+  EnemyType: 4
+  position: {x: 0, y: 0, z: 0}
+  rotation: {x: 0, y: 0, z: 0}
+  sBullet: {fileID: 1997882812359486, guid: 840f338b0237d3440b6d0de9ca9481f5, type: 3}
+  targetTime: 0.3
 --- !u!1 &1000014041502296
 GameObject:
   m_ObjectHideFlags: 0

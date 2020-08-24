@@ -6,6 +6,10 @@ TagManager:
   tags:
   - PlayerWeapon
   - Ammo
+  - Enemy
+  - EnemyWaveTwo
+  - EnemyWaveOne
+  - Boss
   layers:
   - Default
   - TransparentFX

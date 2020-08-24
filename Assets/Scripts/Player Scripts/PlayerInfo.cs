@@ -7,8 +7,12 @@ using UnityEngine.InputSystem;
 public class PlayerInfo : MonoBehaviour
 {
     private InputMaster _inputActions;
-    public int playerHealth = 100;
-    
+    public int playerHealth = 5;
+
+
+    public float targetTime = 0.3f;
+
+
     // Update is called once per frame
     private void Awake()
     {
@@ -22,8 +26,8 @@ public class PlayerInfo : MonoBehaviour
 
     private void Start()
     {
-        _inputActions.Player.Shoot.performed += _ => PlayerShoot();
-        _inputActions.Player.Shoot.Enable();
+       // _inputActions.Player.Shoot.performed += _ => PlayerShoot();
+       // _inputActions.Player.Shoot.Enable();
     }
 
     private void PlayerShoot()
@@ -41,8 +45,20 @@ public class PlayerInfo : MonoBehaviour
 
     void Update()
     {
-       
+        targetTime -= Time.deltaTime;
+
+        if (targetTime <= 0.0f)
+        {
+            timerEnded();
+        }
+
+        
     }
 
+    void timerEnded()
+    {
+        PlayerShoot();
+        targetTime = 0.3f;
+    }
 
 }

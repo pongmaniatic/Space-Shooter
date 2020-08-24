@@ -17,7 +17,7 @@ namespace PathCreation.Examples
 
         public enum MyEnumeratedType
         {
-            WaveOne, WaveTwo, WaveThree
+            WaveOne, WaveTwo
         }
 
 

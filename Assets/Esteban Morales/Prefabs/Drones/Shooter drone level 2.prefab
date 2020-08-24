@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!135 &1986225864297619151
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5477838888690833270}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-6817764620956086072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5477838888690833270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d949b0b075734424e951241e32417099, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 0
+  EnemyType: 1
+  position: {x: 0, y: 0, z: 0}
+  rotation: {x: 0, y: 0, z: 0}
+  sBullet: {fileID: 1374267004960804, guid: 10a196906512b5141bfd56285ee6c562, type: 3}
+  targetTime: 0.3
 --- !u!1001 &4907937889535468438
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -157,6 +188,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shooter drone level 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1749469876035402, guid: 8b826a7c5dffaf04d99fa3f39f8d9060, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 4663716559195562, guid: 8b826a7c5dffaf04d99fa3f39f8d9060, type: 3}
       propertyPath: m_LocalPosition.x
       value: -18.814
@@ -214,6 +249,11 @@ PrefabInstance:
     - {fileID: 114300548789058018, guid: 8b826a7c5dffaf04d99fa3f39f8d9060, type: 3}
     - {fileID: 114239968978226944, guid: 8b826a7c5dffaf04d99fa3f39f8d9060, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 8b826a7c5dffaf04d99fa3f39f8d9060, type: 3}
+--- !u!1 &5477838888690833270 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1749469876035402, guid: 8b826a7c5dffaf04d99fa3f39f8d9060, type: 3}
+  m_PrefabInstance: {fileID: 5477228514555807804}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5481892230021334422 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4663716559195562, guid: 8b826a7c5dffaf04d99fa3f39f8d9060, type: 3}
