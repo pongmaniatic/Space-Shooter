@@ -95,8 +95,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 0
-  EnemyType: 3
-  sBullet: {fileID: 0}
+  EnemyType: 5
+  sBullet: {fileID: 1997882812359486, guid: 840f338b0237d3440b6d0de9ca9481f5, type: 3}
   targetTime: 1
 --- !u!1001 &1169992959134101674
 PrefabInstance:

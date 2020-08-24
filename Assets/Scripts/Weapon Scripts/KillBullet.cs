@@ -58,6 +58,8 @@ public class KillBullet : MonoBehaviour
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
+
+            Destroy(gameObject);
         }
 
 
