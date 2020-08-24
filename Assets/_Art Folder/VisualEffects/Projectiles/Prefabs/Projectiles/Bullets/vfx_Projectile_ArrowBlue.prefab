@@ -5084,7 +5084,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToDestroy: 5
-  weaponDamage: 5
+  weaponDamage: 1
 --- !u!1 &1355984127163962
 GameObject:
   m_ObjectHideFlags: 0
